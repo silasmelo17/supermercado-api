@@ -5,10 +5,16 @@ import express from 'express';
 
 const app = express();
 
+import routes from '@Routes/index'
+
 
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+
+
+app.use(routes);
 
 
 
