@@ -1,0 +1,18 @@
+
+require('dotenv').config();
+
+import express from 'express';
+
+const app = express();
+
+
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+
+
+const PORT = process.env.PORT || 8080;
+app.listen(PORT, () => {
+    console.log(`App listening on port: ${PORT}`);
+});
