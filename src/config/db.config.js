@@ -8,7 +8,7 @@ module.exports = {
         password: process.env.DEV_PASSWORD,
         dialect: process.env.DEV_DIALECT
     },
-    product: {
+    production: {
         host: process.env.HOST,
         port: process.env.DB_PORT,
         database: process.env.DATABASE,
