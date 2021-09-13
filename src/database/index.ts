@@ -4,8 +4,19 @@ import dbConfig from '@Config/db.config';
 
 
 
-const sequelize = new Sequelize(dbConfig.development as Options);
+interface EnvironmentOptions  {
+    development: Options,
+    production: Options
+}
+
+type EnvironmentNameOptions = 'development'| 'production';
+
+const configurations = dbConfig as EnvironmentOptions;
+const connectionName = (process.env.CONNECTION || 'development') as EnvironmentNameOptions
+const connection: Options = configurations[connectionName];
 
 
+
+const sequelize = new Sequelize(connection);
 
 export default sequelize;

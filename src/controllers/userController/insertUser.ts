@@ -5,7 +5,7 @@ import models from '@Models/index'
 
 
 async function insertUser( req: Request, res: Response ) {
-    try{
+    try {
         const result = await models.User.create(req.body);
 
         return res.status(201).json(result);
